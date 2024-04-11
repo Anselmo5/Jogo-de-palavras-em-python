@@ -112,3 +112,28 @@ input[type="submit"]:focus {
 .start-button:focus {
     outline: none;
 }
+
+.alingbutton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.button{
+    background: #0b7dda;
+    padding: 10px;
+    border-radius: 2px;
+    width: 10vw;
+    transition: all 1s;
+}
+
+.button a{
+    text-decoration: none;
+    color: #f4f4f4;
+}
+
+.button:hover{
+    background: #333;
+    transition: all 1s;
+}

@@ -21,6 +21,11 @@ h1 {
     color: #333;
 }
 
+h2 {
+    margin-bottom: 30px;
+    color: #333;
+}
+
 .game-board {
     display: inline-block;
     margin-bottom: 30px;
@@ -120,20 +125,147 @@ input[type="submit"]:focus {
     flex-direction: row;
 }
 
-.button{
+.button button{
     background: #0b7dda;
+    font-size: 0.9em;
     padding: 10px;
     border-radius: 2px;
     width: 10vw;
     transition: all 1s;
-}
-
-.button a{
-    text-decoration: none;
+    border: none;
     color: #f4f4f4;
 }
 
-.button:hover{
+.button button:hover{
     background: #333;
     transition: all 1s;
+}
+
+.dificuted{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.dificuted img{
+    width: 20vw;
+    height: auto;
+    margin: 10px;
+    border-radius: 1pc;
+
+}
+
+.dificult1 button:hover{
+    background: #333;
+}   
+
+
+.dificult1 button{
+ width: 20vw;
+ padding: 10px;
+ margin: 10px;
+ background: #0b7dda;
+ color: #f4f4f4;
+ font-size: 0.9em;
+ border: none;
+ border-radius: 2px;
+ transition: all 1s;
+}
+
+
+.dificult2 button:hover{
+    background: #333;
+}   
+
+
+.dificult2 button{
+ width: 20vw;
+ padding: 10px;
+ margin: 10px;
+ background: #0b7dda;
+ color: #f4f4f4;
+ font-size: 0.9em;
+ border: none;
+ border-radius: 2px;
+ transition: all 1s;
+}
+
+
+.dificult3 button:hover{
+    background: #333;
+}   
+
+
+.dificult3 button{
+ width: 20vw;
+ padding: 10px;
+ margin: 10px;
+ background: #0b7dda;
+ color: #f4f4f4;
+ font-size: 0.9em;
+ border: none;
+ border-radius: 2px;
+ transition: all 1s;
+}
+
+
+
+
+
+.textohover{
+    position: absolute;
+    bottom: 70px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.5s;
+    width: 18.5vw;
+    height: 23.3vh;
+    border-radius: 1pc;
+}
+
+.textohover2{
+    position: absolute;
+    bottom: 83px;
+    left: 290px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.5s;
+    width: 18.5vw;
+    height: 19.5vh;
+    border-radius: 1pc;
+}
+
+
+.textohover3{
+    position: absolute;
+    bottom: 75px;
+    left: 570px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.5s;
+    width: 18.3vw;
+    height: 21.9vh;
+    border-radius: 1pc;
+}
+
+.dificult1:hover .textohover{
+    opacity: 1;
+}
+
+.dificult2:hover .textohover2{
+    opacity: 1;
+}
+
+.dificult3:hover .textohover3{
+    opacity: 1;
 }

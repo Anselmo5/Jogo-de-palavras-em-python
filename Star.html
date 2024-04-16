@@ -1,51 +1,85 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title> <link rel="shortcut icon" href="./Screenshot_from_2024-04-10_19-15-05-removebg.png" type="image/x-icon">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-            <div class="container">
-                    <h2>Escolha um Nivel</h2>
-                <div class="dificuted">
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Caça-Palavras</title> 
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./Screenshot_from_2024-04-10_19-15-05-removebg.png" type="image/x-icon">
+</head>
+<body>
 
-                    <div class="dificult1">
-                        <img src="cap-7181.webp" alt="">
-                        <div class="textohover">
-                            Popo sempre em suas lutas consegui venceu,
-                            então esse nivel e facil
-                        </div>
-                        <div class="aling">
-                            <button>Nivel 1</button>
-                        </div>
-                </div>
-                        
-                <div class="dificult2">
-                    <img src="whindersonpopo-e1643634191551.jpeg" alt="">
-                    <div class="textohover2">
-                        Popo e Wind lutaram, Wind achou que poderia vencer,
-                        então se você acha que passar por esse nivel tente a sorte
-                    </div>
-                        <div class="aling">
-                            <button>Nivel 2</button>
-                        </div>
-                    </div>
+<div class="container">
+    <h1>Jogo de Caça-Palavras</h1>
+    
+    <div class="game-board">
+        <div class="row">
+            <div class="cell" id="A">A</div>
+            <div class="cell" id="B">B</div>
+            <div class="cell" id="C">C</div>
+            <div class="cell" id="D">D</div>
+            <div class="cell" id="E">E</div>
+        </div>
+        <div class="row">
+            <div class="cell" id="F">F</div>
+            <div class="cell" id="G">G</div>
+            <div class="cell" id="H">H</div>
+            <div class="cell" id="I">I</div>
+            <div class="cell" id="J">J</div>
+        </div>
+        <div class="row">
+            <div class="cell" id="K">K</div>
+            <div class="cell" id="L">L</div>
+            <div class="cell" id="M">M</div>
+            <div class="cell" id="N">N</div>
+            <div class="cell" id="O">O</div>
+        </div>
+        <div class="row">
+            <div class="cell" id="P">P</div>
+            <div class="cell" id="Q">Q</div>
+            <div class="cell" id="R">R</div>
+            <div class="cell" id="S">S</div>
+            <div class="cell" id="T">T</div>
+        </div>
+        <div class="row">
+            <div class="cell" id="U">U</div>
+            <div class="cell" id="V">V</div>
+            <div class="cell" id="W">W</div>
+            <div class="cell" id="X">X</div>
+            <div class="cell" id="Y">Y</div>
+        </div>
+    </div>
+    
+    <div class="word-list">
+        <h2>Palavras Encontradas:</h2>
+        <ul id="palavras-encontradas">
+            
+        </ul>
+    </div>
+    
+    <form id="wordForm" action="/jogar" method="post">
+        <input type="text" id="letra" name="letra" placeholder="Digite uma letra" required>
+        <input type="submit" value="Enviar">
+    </form>
+</div>
 
-                    <div class="dificult3">
-                            <img src="1267060251-whindersson-popo.webp" alt="">
-                            <div class="textohover3">
-                                Depois que a luta começou Wind percebeu que seria dificil,
-                                se você escolher esse nivel se prepare que vai ser dificil
-                
-                            </div>
-                            <div class="aling">
-                                <button>Nivel 3</button>
-                        </div>
-                    </div>
+<script>
+document.getElementById("wordForm").onsubmit = function() {
+    var letra = document.getElementById("letra").value;
+    var formData = new FormData();
+    formData.append("letra", letra);
+    
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "/jogar", true);
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            document.getElementById("resultado").innerHTML = xhr.responseText;
+        }
+    };
+    xhr.send(formData);
+    return false;
+};
+</script>
 
-                </div>
-            </div>
-    </body>
-    </html>
+</body>
+</html>

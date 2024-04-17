@@ -14,12 +14,18 @@
     <br>
     <form action="/iniciar" method="post" id="form-iniciar">
         <label>Grupo: </label><br>
+        <input type="radio" id="animais" name="grupo" value="ANIMAIS">
+        <label for="filmes">ANIMAIS</label><br>
         <input type="radio" id="automovel" name="grupo" value="AUTOMOVEL">
         <label for="automovel">AUTOMOVEL</label><br>
         <input type="radio" id="filmes" name="grupo" value="FILMES">
         <label for="filmes">FILME</label><br>
         <input type="radio" id="frutas" name="grupo" value="FRUTAS">
         <label for="frutas">FRUTA</label><br>
+        <input type="radio" id="Paises" name="grupo" value="PAISES">
+        <label for="automovel">PAISES</label><br>
+        <input type="radio" id="profissoes" name="grupo" value="PROFISSOES">
+        <label for="frutas">PROFISSOES</label><br>
         <br><br>
         <label >Dificuldade: </label><br>
         <input type="radio" id="facil" name="dificuldade" value="FACIL">
@@ -33,8 +39,32 @@
         <br><br>
         <button type="submit" name="iniciar" id="botao-iniciar" disabled>INICIAR</button>
     </form>
-    <br><br>
-    <label >Ranking: Nome - Status - Palavra - Pontuação</label>
+    <h1>Ranking</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Colocação</th>
+                <th>Nome</th>
+                <th>Nivel</th>
+                <th>Status</th>
+                <th>Palavra</th>
+                <th>Pontos</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for linha in top_10_colocados %}
+            {% set dados = linha.split(';') %}
+            <tr>
+                <td>{{ dados[0] }}</td>
+                <td>{{ dados[1] }}</td>
+                <td>{{ dados[2] }}</td>
+                <td>{{ dados[3] }}</td>
+                <td>{{ dados[4] }}</td>
+                <td>{{ dados[5] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </div>
 
 <script>

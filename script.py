@@ -6,8 +6,22 @@ app = Flask(__name__)
 app.secret_key = "serve"
 
 @app.route("/")
-def index():    
-    return render_template("index.html", titulo="Jogo")
+def index():
+
+    with open("ranking.txt", "r") as arquivo:
+        grupo_ranking = []
+        for linha in arquivo:
+            palavra = linha.strip()
+            grupo_ranking.append(palavra)
+    grupo_ranking.sort(key=lambda x: int(x.split(';')[4]), reverse=True)
+
+    for i, palavra in enumerate(grupo_ranking, 1):
+        palavra_split = palavra.split(';')
+        palavra_split.insert(0, str(i))
+        grupo_ranking[i - 1] = ';'.join(palavra_split)
+    top_10_colocados = grupo_ranking[:10]
+    
+    return render_template("index.html", titulo="Jogo",  top_10_colocados=top_10_colocados)
 
 @app.route("/iniciar", methods=["POST"])
 def escolher_grupo():
@@ -61,12 +75,12 @@ def jogar():
     if session["erros"] >= max_erros:
         enforcou = True
         pontos = calcular_pontos(len(palavra_secreta), "DERROTA", erros, max_erros)
-        popular_ranking(jogador,"DERROTA", palavra_secreta, pontos)
+        popular_ranking(jogador,dificuldade_escolhida,"DERROTA", palavra_secreta, pontos)
         return render_template("Fim.html", resultado="DERROTA", jogador=jogador) #CARREGAR POPUP COM A MENSAGEM DERROTA (PONTOS, NOME JOGADOR, COLOCACAO)
     if "_" not in letras_acertadas:
         acertou = True
         pontos = calcular_pontos(len(palavra_secreta), "VITORIA", erros, max_erros)
-        popular_ranking(jogador,"VITORIA", palavra_secreta, 10)
+        popular_ranking(jogador,dificuldade_escolhida,"VITORIA", palavra_secreta, pontos)
         return render_template("Fim.html", resultado="VITORIA", jogador=jogador) #CARREGAR POPUP COM A MENSAGEM VITORIA (PONTOS, NOME JOGADOR, COLOCACAO)
     return render_template("Start.html", titulo="Jogo Forca"
                                         , grupo_escolhido=grupo_escolhido
@@ -83,19 +97,19 @@ def jogar():
                                         )
                         
 
-def popular_ranking(nome, status, palavra, pontuacao):
+def popular_ranking(nome, nivel, status, palavra, pontuacao):
     with open("ranking.txt", "a") as arquivo:
-        arquivo.write(f"{nome};{status};{palavra};{pontuacao}\n")
+        arquivo.write(f"{nome};{nivel};{status};{palavra};{pontuacao}\n")
 
 def calcular_pontos(tamanho_palavra, resultado_jogo, letras_erradas, nivel_dificuldade):
     fator_tamanho_palavra = 5
-    fator_letras_erradas = -2
+    fator_letras_erradas = -5
     fator_nivel_dificuldade = 5
 
     pontos_tamanho_palavra = tamanho_palavra * fator_tamanho_palavra
     pontos_resultado = 100 if resultado_jogo == "VITORIA" else 0 
     pontos_letras_erradas = letras_erradas * fator_letras_erradas
-    pontos_nivel_dificuldade = (30 - nivel_dificuldade) * fator_nivel_dificuldade  
+    pontos_nivel_dificuldade = (10 - nivel_dificuldade) * fator_nivel_dificuldade  
 
     pontos_totais = pontos_tamanho_palavra + pontos_resultado + pontos_letras_erradas + pontos_nivel_dificuldade
     return pontos_totais

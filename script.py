@@ -81,7 +81,7 @@ def jogar():
         acertou = True
         pontos = calcular_pontos(len(palavra_secreta), "VITORIA", erros, max_erros)
         popular_ranking(jogador,dificuldade_escolhida,"VITORIA", palavra_secreta, pontos)
-        return render_template("Fim.html", resultado="VITORIA", jogador=jogador) #CARREGAR POPUP COM A MENSAGEM VITORIA (PONTOS, NOME JOGADOR, COLOCACAO)
+        return render_template("Fim.html", resultado="VITORIA", jogador=jogador, disparar_confetes=True) #CARREGAR POPUP COM A MENSAGEM VITORIA (PONTOS, NOME JOGADOR, COLOCACAO)
     return render_template("Start.html", titulo="Jogo Forca"
                                         , grupo_escolhido=grupo_escolhido
                                         , dificuldade_escolhida=dificuldade_escolhida

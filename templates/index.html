@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jogo</title>
+    <link rel="stylesheet" href="../static/style.css"> <link rel="shortcut icon" href="Screenshot_from_2024-04-10_19-15-05-removebg.png" type="image/x-icon">
+</head>
+<body>
+<div class="container">
+    <div class="page-header">
+        <h1>{{ titulo }}</h1>
+    </div>
+    <br>
+    <form action="/iniciar" method="post" id="form-iniciar">
+        <label>Grupo: </label><br>
+        <input type="radio" id="automovel" name="grupo" value="AUTOMOVEL">
+        <label for="automovel">AUTOMOVEL</label><br>
+        <input type="radio" id="filmes" name="grupo" value="FILMES">
+        <label for="filmes">FILME</label><br>
+        <input type="radio" id="frutas" name="grupo" value="FRUTAS">
+        <label for="frutas">FRUTA</label><br>
+        <br><br>
+        <label >Dificuldade: </label><br>
+        <input type="radio" id="facil" name="dificuldade" value="FACIL">
+        <label for="facil">FACIL</label><br>
+        <input type="radio" id="medio" name="dificuldade" value="MEDIO">
+        <label for="medio">MEDIO</label><br>
+        <input type="radio" id="dificil" name="dificuldade" value="DIFICIL">
+        <label for="dificil">DIFICIL</label><br>
+        <br><br>
+        <input type="text" placeholder="Nome" name="nome" id="nome">
+        <br><br>
+        <button type="submit" name="iniciar" id="botao-iniciar" disabled>INICIAR</button>
+    </form>
+    <br><br>
+    <label >Ranking: Nome - Status - Palavra - Pontuação</label>
+</div>
+
+<script>
+    // Função para verificar se os campos foram preenchidos/selecionados
+    function verificarCampos() {
+        var grupoSelecionado = document.querySelector('input[name="grupo"]:checked');
+        var dificuldadeSelecionada = document.querySelector('input[name="dificuldade"]:checked');
+        var nomePreenchido = document.getElementById('nome').value.trim();
+
+        // Habilitar o botão "INICIAR" se todos os campos estiverem preenchidos/selecionados
+        if (grupoSelecionado && dificuldadeSelecionada && nomePreenchido) {
+            document.getElementById('botao-iniciar').disabled = false;
+        } else {
+            document.getElementById('botao-iniciar').disabled = true;
+        }
+    }
+
+    // Chamar a função verificarCampos quando houver alterações nos campos
+    var inputs = document.querySelectorAll('input[type="radio"], input[type="text"]');
+    inputs.forEach(function(input) {
+        input.addEventListener('change', verificarCampos);
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+Automovel;carro
+Automovel;Rodas
+Automovel;Motor
+Automovel;Velocidade
+Automovel;Direcao
+Automovel;Combustivel
+Automovel;Pneus
+Automovel;Carroceria
+Automovel;Marcha
+Automovel;Suspensao
+Paises;Argentina
+Paises;Espanha
+Paises;Italia
+Paises;Mexico
+Paises;Australia
+Paises;Coreia do Sul
+Paises;Egito
+Paises;Suecia
+Paises;Nigeria
+Paises;Tailândia
+Frutas;Banana
+Frutas;Maca
+Frutas;Morango
+Frutas;Abacaxi
+Frutas;Laranja
+Frutas;Melancia
+Frutas;Uva
+Frutas;Pera
+Frutas;Manga
+Frutas;Kiwi
+Animais;Leao
+Animais;Elefante
+Animais;Tigre
+Animais;Girafa
+Animais;Cachorro
+Animais;Gato
+Animais;Urso
+Animais;Zebra
+Animais;Coelho
+Animais;Macaco
+Profissoes;Medico
+Profissoes;Professor
+Profissoes;Engenheiro
+Profissoes;Advogado
+Profissoes;Arquiteto
+Profissoes;Cozinheiro
+Profissoes;Policial
+Profissoes;Bombeiro
+Profissoes;Jornalista
+Profissoes;Ator
+Filmes;Titanic
+Filmes;Matrix
+Filmes;O Senhor dos Aneis
+Filmes;Pulp Fiction
+Filmes;Star Wars
+Filmes;Forrest Gump
+Filmes;O Poderoso Chefao
+Filmes;Harry Potter
+Filmes;Jurassic Park
+Filmes;Avatar

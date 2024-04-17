@@ -11,34 +11,47 @@
     <div class="page-header">
         <h1>{{ titulo }}</h1>
     </div>
-    <br>
     <form action="/iniciar" method="post" id="form-iniciar">
-        <label>Grupo: </label><br>
-        <input type="radio" id="animais" name="grupo" value="ANIMAIS">
-        <label for="filmes">ANIMAIS</label><br>
-        <input type="radio" id="automovel" name="grupo" value="AUTOMOVEL">
-        <label for="automovel">AUTOMOVEL</label><br>
-        <input type="radio" id="filmes" name="grupo" value="FILMES">
-        <label for="filmes">FILME</label><br>
-        <input type="radio" id="frutas" name="grupo" value="FRUTAS">
-        <label for="frutas">FRUTA</label><br>
-        <input type="radio" id="Paises" name="grupo" value="PAISES">
-        <label for="automovel">PAISES</label><br>
-        <input type="radio" id="profissoes" name="grupo" value="PROFISSOES">
-        <label for="frutas">PROFISSOES</label><br>
-        <br><br>
-        <label >Dificuldade: </label><br>
-        <input type="radio" id="facil" name="dificuldade" value="FACIL">
-        <label for="facil">FACIL</label><br>
-        <input type="radio" id="medio" name="dificuldade" value="MEDIO">
-        <label for="medio">MEDIO</label><br>
-        <input type="radio" id="dificil" name="dificuldade" value="DIFICIL">
-        <label for="dificil">DIFICIL</label><br>
-        <br><br>
-        <input type="text" placeholder="Nome" name="nome" id="nome">
-        <br><br>
-        <button type="submit" name="iniciar" id="botao-iniciar" disabled>INICIAR</button>
+        <div class="GroupPalavras">
+            <label>Grupo: </label>
+         <div class="categorias">
+            <input type="radio" id="animais" name="grupo" value="ANIMAIS">
+            <label for="filmes">ANIMAIS</label>
+            <input type="radio" id="automovel" name="grupo" value="AUTOMOVEL">
+            <label for="automovel">AUTOMOVEL</label>
+            <input type="radio" id="filmes" name="grupo" value="FILMES">
+            <label for="filmes">FILME</label>
+            <input type="radio" id="frutas" name="grupo" value="FRUTAS">
+            <label for="frutas">FRUTA</label>
+         </div>
+         <div class="subcategoria">
+            <input type="radio" id="Paises" name="grupo" value="PAISES">
+            <label for="automovel">PAISES</label><br>
+            <input type="radio" id="profissoes" name="grupo" value="PROFISSOES">
+            <label for="frutas">PROFISSOES</label><br>
+        </div>
+        </div>
+
+        <div class="GroupPalavras">
+            <label >Dificuldade: </label>
+            <div class="categorias">
+                <input type="radio" id="facil" name="dificuldade" value="FACIL">
+                <label for="facil">FACIL</label>
+                <input type="radio" id="medio" name="dificuldade" value="MEDIO">
+                <label for="medio">MEDIO</label>
+                <input type="radio" id="dificil" name="dificuldade" value="DIFICIL">
+                <label for="dificil">DIFICIL</label>
+            </div>
+
+            <div class="startgame">
+                <input type="text" placeholder="Nome" name="nome" id="nome">
+                <button type="submit" name="iniciar" id="botao-iniciar" disabled>INICIAR</button>
+            </div>
+        </div>
     </form>
+</div>
+
+<div class="container2">
     <h1>Ranking</h1>
     <table border="1">
         <thead>

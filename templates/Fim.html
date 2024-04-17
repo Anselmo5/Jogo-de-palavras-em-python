@@ -5,19 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Jogo</title>
     <link rel="stylesheet" href="../static/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.0.0/dist/canvas-confetti.min.js"></script>
 
   </head>
   <body>
     <div class="container">
-        <div class="page-header">
-            <h1>{{ titulo }}</h1>
-        </div>
+        <div class="gamefim">
         <label >Jogador: {{jogador}}</label> 
-        
         <label >Resultado: {{resultado}}</label> 
+    
         <form action="/" method="get">
           <button name="Reiniciar" type="submit">Reiniciar</button>
       </form>
+
+      <script>
+        // Função para criar confetes com a biblioteca Confetti.js
+        function dispararConfetes() {
+          // Configurações dos confetes
+          var config = {
+            angle: 90,
+            spread: 360,
+            startVelocity: 45,
+            elementCount: 50,
+            decay: 0.9,
+            colors: ['#ff0000', '#00ff00', '#0000ff'], // Cores dos confetes
+            origin: { x: Math.random(), y: Math.random() } // Origem aleatória
+          };
+          
+          // Disparar os confetes
+          confetti.create(document.body, config);
+        }
+    
+        // Chame a função para disparar confetes
+        dispararConfetes();
+        </script>
+    </div>
     </div>
   </body>
 </html>

@@ -1,11 +1,1 @@
-Cezar;DIFICIL;VITORIA;LEAO;200
-Cezar Barroso Pinto Junior;DIFICIL;VITORIA;GIRAFA;360
-Cezar Barroso Pinto Junior;MEDIO;VITORIA;SUSPENSAO;245
-Anselmo fazendo merda;FACIL;DERROTA;URSO;-30
-Alselmo não acerta nem uma;FACIL;DERROTA;MELANCIA;-10
-Termina essa merda Anselmo;FACIL;DERROTA;ITALIA;-20
-Anselmo arrasando na pontuação;FACIL;DERROTA;FORREST GUMP;10
-Anselmo não desiste;FACIL;DERROTA;PROFESSOR;-5
-Anselmo - doido dos IFs;FACIL;DERROTA;LEAO;-30
-o Ranking ficou aparecendo só os 10 primeiros colocados;FACIL;DERROTA;KIWI;-30
-o 11 ja não aparece;FACIL;DERROTA;KIWI;-30
+Anselmo;FACIL;VITORIA;DIRECAO;135

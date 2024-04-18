@@ -1,6 +1,5 @@
 import random
 from flask import Flask, render_template, request, redirect, session
-import re
 
 app = Flask(__name__)
 app.secret_key = "serve"
@@ -8,7 +7,7 @@ app.secret_key = "serve"
 @app.route("/")
 def index():
 
-    with open("ranking.txt", "r") as arquivo:
+    with open("ranking.txt","r") as arquivo:
         grupo_ranking = []
         for linha in arquivo:
             palavra = linha.strip()

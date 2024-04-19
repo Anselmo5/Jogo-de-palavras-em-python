@@ -51,8 +51,6 @@ def escolher_grupo():
                                         , jogador=jogador
                                         , letra = chute
                             )
-
-
 @app.route("/jogar", methods=["POST"])
 def jogar():
     chute = request.form.get("letra")
@@ -94,8 +92,6 @@ def jogar():
                                         , max_erros = max_erros
                                         , jogador=jogador
                                         )
-                        
-
 def popular_ranking(nome, nivel, status, palavra, pontuacao):
     with open("ranking.txt", "a") as arquivo:
         arquivo.write(f"{nome};{nivel};{status};{palavra};{pontuacao}\n")
@@ -115,7 +111,7 @@ def calcular_pontos(tamanho_palavra, resultado_jogo, letras_erradas, nivel_dific
 
 
 def carrega_palavra_secreta(grupo_escolhido): #passar o grupo escolhido
-    arquivo = open("palavras.txt", "r")
+    arquivo = open("Jogo-de-palavras-em-python/palavras.txt","r")
     palavras_grupo = []
 
     for linha in arquivo:

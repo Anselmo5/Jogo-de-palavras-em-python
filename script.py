@@ -6,13 +6,21 @@ app.secret_key = "serve"
 
 @app.route("/")
 def index():
-
-    with open("ranking.txt","r") as arquivo:
-        grupo_ranking = []
-        for linha in arquivo:
-            palavra = linha.strip()
-            grupo_ranking.append(palavra)
-    grupo_ranking.sort(key=lambda x: int(x.split(';')[4]), reverse=True)
+# Tente abrir o arquivo no modo de leitura
+    try:
+        with open("ranking.txt", "r") as arquivo:
+            grupo_ranking = []
+            for linha in arquivo:
+                palavra = linha.strip()
+                grupo_ranking.append(palavra)
+        grupo_ranking.sort(key=lambda x: int(x.split(';')[4]), reverse=True)
+    except FileNotFoundError:
+        with open("ranking.txt","a+") as arquivo:
+            grupo_ranking = []
+            for linha in arquivo:
+                palavra = linha.strip()
+                grupo_ranking.append(palavra)
+        grupo_ranking.sort(key=lambda x: int(x.split(';')[4]), reverse=True)
 
     for i, palavra in enumerate(grupo_ranking, 1):
         palavra_split = palavra.split(';')
@@ -134,11 +142,6 @@ def marca_chute_correto(chute, letras_acertadas, palavra_secreta):
     # Atualiza a lista de letras acertadas na sessão
     session["letras_acertadas"] = letras_acertadas
 
-
-def pede_chute():
-    chute = input("Qual letra? ")
-    chute = chute.strip().upper()
-    return chute
 
 def inicializa_letras_acertadas(palavra): # retorna o numero de caracteres da palavra
     return ["_" for letra in palavra]

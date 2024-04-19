@@ -69,7 +69,7 @@ def jogar():
         enforcou = True
         pontos = mtd.calcular_pontos(len(palavra_secreta), "DERROTA", erros, max_erros)
         mtd.popular_ranking(jogador,dificuldade_escolhida,"DERROTA", palavra_secreta, pontos)
-        return render_template("Fim.html", resultado="DERROTA", jogador=jogador) 
+        return render_template("Fim.html", resultado="DERROTA", jogador=jogador,confete_derrota=True) 
     
     if "_" not in letras_acertadas:
         acertou = True

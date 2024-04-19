@@ -45,7 +45,38 @@
             celebrateVictory();
 
             </script> 
-          {% endif %}         
+          {% endif %} 
+
+          {% if confete_derrota %}
+          <div id="confete-container"></div>
+          <script>
+              function createConfetti() {
+                const emojis = ["😢","😔","😞","😭"]; // Lista de emojis de confetes
+                const confetti = document.createElement('div');
+                confetti.classList.add('confete');
+                confetti.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+                confetti.style.setProperty('--x', Math.random());
+                confetti.style.setProperty('--y', Math.random());
+                confetti.style.left = `${Math.random() * 45}vw`;
+                document.getElementById('confete-container').appendChild(confetti);
+
+                setTimeout(() => {
+                    confetti.remove();
+                }, 5000);
+            }
+
+            function celebrateVictory() {
+                for (let i = 0; i < 500; i++) {
+                    setTimeout(createConfetti, Math.random() * 5000);
+                }
+            }
+
+            celebrateVictory();
+
+            </script> 
+          {% endif %}      
+          
+
         </div>
       </div>
     </div>

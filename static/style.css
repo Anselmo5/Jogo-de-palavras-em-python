@@ -275,6 +275,24 @@ h1 {
     color: #fff;
 }
 
+/* confete */
+
+.confete {
+    position: absolute;
+    font-size: 20px;
+    animation: fall 5s linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translate(0, -100vh) rotate(0deg);
+    }
+    100% {
+        transform: translate(calc(100vw * var(--x)), calc(100vh * var(--y))) rotate(360deg);
+    }
+}
+
+
 /* Responsividade */
 
 @media screen and (min-width:1500px) and (max-width:2560px){

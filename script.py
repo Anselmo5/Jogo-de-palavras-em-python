@@ -18,9 +18,8 @@ def index():
         palavra_split = palavra.split(';')
         palavra_split.insert(0, str(i))
         grupo_ranking[i - 1] = ';'.join(palavra_split)
-    top_10_colocados = grupo_ranking[:10]
     
-    return render_template("index.html", titulo="Jogo",  top_10_colocados=top_10_colocados)
+    return render_template("index.html", titulo="Jogo",  grupo_ranking=grupo_ranking)
 
 @app.route("/iniciar", methods=["POST"])
 def escolher_grupo():
@@ -111,7 +110,7 @@ def calcular_pontos(tamanho_palavra, resultado_jogo, letras_erradas, nivel_dific
 
 
 def carrega_palavra_secreta(grupo_escolhido): #passar o grupo escolhido
-    arquivo = open("Jogo-de-palavras-em-python/palavras.txt","r")
+    arquivo = open("palavras.txt","r")
     palavras_grupo = []
 
     for linha in arquivo:

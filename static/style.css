@@ -83,7 +83,7 @@ body {
 }
 
 .container2:hover table{
-   transform: translateY(-20px);
+   transform: translateY(-10px);
 }
 
 .container2 th, td {
@@ -108,7 +108,7 @@ body {
 }
 
 h1 {
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     color: #333;
 }
 

@@ -309,13 +309,4 @@ h1 {
  .GroupPalavras input{
     padding: 10px;
  }
-
- .startgame{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 10px;
- }
-
 }

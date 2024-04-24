@@ -17,7 +17,7 @@ Paises;Coreia do Sul
 Paises;Egito
 Paises;Suecia
 Paises;Nigeria
-Paises;Tailândia
+Paises;Tailandia
 Frutas;Banana
 Frutas;Maca
 Frutas;Morango

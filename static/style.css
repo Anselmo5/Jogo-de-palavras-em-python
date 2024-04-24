@@ -13,6 +13,37 @@ body {
     margin-top: 15vh;
 } 
 
+.alingstart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.fimgame{
+    background-color: #fff;
+    padding: 40px;
+    width: 50vw;
+    height: 50vh;
+    margin: 5px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center; 
+    margin-top: 15vh;
+}
+
+.container3{
+    background-color: #fff;
+    padding: 40px;
+    width: 50vw;
+    height: 80vh;
+    margin: 5px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: 2vh;
+}
+
 .container {
     background-color: #fff;
     padding: 40px;
@@ -34,6 +65,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+    overflow-y: auto;
 }
 
 .container2 h1{
@@ -46,7 +78,12 @@ body {
     width: 100%;
     border-collapse: collapse;
     border: 1px solid #ddd;
-    margin-top: -10px;
+    transition: all 1s;
+    transform: translateY(0)    
+}
+
+.container2:hover table{
+   transform: translateY(-10px);
 }
 
 .container2 th, td {
@@ -71,7 +108,7 @@ body {
 }
 
 h1 {
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     color: #333;
 }
 
@@ -94,7 +131,7 @@ h1 {
     align-items: center;
     flex-direction: column;
     margin-bottom: 30px;
-    padding: 10px;
+
 }
 
 .game-board .row button{
@@ -123,6 +160,8 @@ h1 {
     margin: 10px;
 }
 
+
+
 .forca {
     font-family: Arial, sans-serif;
     font-size: 20px;
@@ -135,9 +174,9 @@ h1 {
 
 .forca li {
     display: inline-block;
-    margin-right: 5px;
     width: 3vw;
-    padding: 10px;
+    padding: 5px;
+    margin: 3px;
     border-radius: 5px;
     text-align: center;
     background: #333;
@@ -149,6 +188,7 @@ h1 {
     justify-content:center;
     align-items: center;
     flex-direction: column;
+    margin-top: 15vh;
 }
 
 .gamefim label{
@@ -239,6 +279,24 @@ h1 {
     background: #333;
     color: #fff;
 }
+
+/* confete */
+
+.confete {
+    position: absolute;
+    font-size: 20px;
+    animation: fall 5s linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translate(0, -100vh) rotate(0deg);
+    }
+    100% {
+        transform: translate(calc(100vw * var(--x)), calc(100vh * var(--y))) rotate(360deg);
+    }
+}
+
 
 /* Responsividade */
 

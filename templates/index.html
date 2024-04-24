@@ -17,7 +17,7 @@
                 <label>Grupo: </label>
             <div class="categorias">
                 <input type="radio" id="animais" name="grupo" value="ANIMAIS">
-                <label for="filmes">ANIMAIS</label>
+                <label for="animais">ANIMAIS</label>
                 <input type="radio" id="automovel" name="grupo" value="AUTOMOVEL">
                 <label for="automovel">AUTOMOVEL</label>
                 <input type="radio" id="filmes" name="grupo" value="FILMES">
@@ -27,9 +27,9 @@
             </div>
             <div class="subcategoria">
                 <input type="radio" id="Paises" name="grupo" value="PAISES">
-                <label for="automovel">PAISES</label><br>
+                <label for="Paises">PAISES</label><br>
                 <input type="radio" id="profissoes" name="grupo" value="PROFISSOES">
-                <label for="frutas">PROFISSOES</label><br>
+                <label for="profissoes">PROFISSOES</label><br>
             </div>
             </div>
 
@@ -66,7 +66,7 @@
                 </tr>
             </thead>
             <tbody>
-                {% for linha in top_10_colocados %}
+                {% for linha in grupo_ranking %}
                 {% set dados = linha.split(';') %}
                 <tr>
                     <td>{{ dados[0] }}</td>
